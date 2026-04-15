@@ -35,12 +35,12 @@ output:
     vault_path: "~/Documents/obsidian-vault"
     subdir: "video-notes"
 
-  # 飞书（依赖 lark-cli，通过 bot 发到群）
+  # 飞书（依赖 lark-cli，创建云文档）
   lark:
     enabled: false
-    app_id: ""           # 你的飞书 bot App ID
+    app_id: ""           # 飞书 bot App ID（bot 需开通 docx:document 权限）
     app_secret: ""       # App Secret
-    chat_id: ""          # 目标群 chat_id，例如 oc_xxxxx
+    chat_id: ""          # 可选：配了就在这个群里发"新文档已整理"的简短通知 + 链接
 
   # Notion（TODO: 待实现）
   notion:
