@@ -19,3 +19,6 @@ tmp/
 .vscode/
 .idea/
 .DS_Store
+
+# 发布前的草稿/脚本（不进公开仓库）
+_drafts/

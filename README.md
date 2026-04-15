@@ -123,16 +123,23 @@ videos-to-book/
 
 ## 样板产出 · Samples
 
-看 `examples/` 里的样板，对比原始字幕和重排后的可读性差异。核心目标不是"短"，是"好读"。
+`examples/` 下有三份真实跑通的样板，覆盖三种典型场景：
 
-**重排前**（AI 字幕节选）：
+| 场景 | 样板文件 | 用的 prompt |
+|---|---|---|
+| 中文讲课转书（A1） | `examples/P03-查理编剧课-劝学-样板.md` | `prompts/zh-lecture-to-book.md` |
+| 英文访谈 → 中文长文（A2） | `examples/youtube-Greg-Isenberg-Obsidian-Claude-Code-样板.md` | `prompts/en-to-zh-book.md` |
+| 中文对谈节目整理（A1 变体） | `examples/bilibili-一麦三连-EP17-快乐-样板.md` | `prompts/zh-lecture-to-book.md` |
+
+核心目标不是"短"，是"好读"。看样板能直观理解重排效果。
+
+**粗暴对比**——原始字幕（机械转换）：
 ```
 你知道这个学学习这件事
 就是我跟你们说啊
 其实没那么简单你想想看对吧
 ```
-
-**重排后**（样板）：
+**重排后**：
 ```markdown
 ### 学习没那么简单
 
@@ -141,7 +148,56 @@ videos-to-book/
 
 ## 使用我们自己的样板 prompt？
 
-`prompts/zh-lecture-to-book.md` 是我们跑了 91 集《查理的编剧课》B 站课程打磨出来的。**你可以直接用，也可以改成你领域的风格**（技术分享、商业访谈、学术讲座格式都不一样）。
+`prompts/zh-lecture-to-book.md` 是我们跑了 91 集《查理的编剧课》B 站课程 + 多期 B 站 / YouTube 访谈视频打磨出来的。**你可以直接用，也可以改成你领域的风格**（技术分享、商业访谈、学术讲座格式都不一样）。
+
+## 已知陷阱 · Known Pitfalls
+
+我们在测试过程中踩到的坑，先写这里免得你也踩。
+
+### 1. B 站字幕需要 Chrome 登录态
+
+```
+WARNING: Subtitles are only available when logged in
+```
+
+**触发**：Chrome B 站 cookie 过期或从未登录。
+**修复**：打开 Chrome，登录 bilibili.com，重跑脚本。
+**备选**：用 "Get cookies.txt LOCALLY" 浏览器插件导出 cookies.txt，用 `yt-dlp --cookies path/to/cookies.txt` 参数。
+
+### 2. Python 3.9 兼容性
+
+本项目**已兼容 Python 3.9**（macOS 默认 python3）。所有文件都加了 `from __future__ import annotations`。如果你自己加文件，记得别用 PEP 604 的 `str | None` 语法（需 3.10+），用 `Optional[str]`。
+
+### 3. 同一视频的多语言字幕会同名冲突
+
+YouTube 经常同时提供 `.en.srt` 和 `.zh-Hans.srt`。srt2md 已经把输出命名成 `<stem>__<lang>.md` 避免互相覆盖（v0.1.x 早期版本会覆盖，现已修复）。
+
+### 4. 飞书 bot 需要 docx:document 权限
+
+lark adapter 现在是**创建飞书云文档**（不是发聊天消息），bot 需要在飞书开放平台**开通 `docx:document` 权限**。没有权限会报：
+
+```
+Access denied. One of the following scopes is required:
+[docx:document, docx:document:create]
+```
+
+开通链接：`https://open.larkoffice.com/app/<你的 app_id>/auth?q=docx:document,docx:document:create`
+
+### 5. AI 字幕有识别错误，需要上下文修正
+
+B 站 AI 字幕把"陈老师"识别成"程老师"、"谭老师"识别成"汤老师"——不要机械信任字幕。英文字幕同理（Claude Code 经常被识别成 Claw Code、Claudebot 等）。**prompt 里已经有"同音字修正"规则**，AI 会根据上下文自己纠错。
+
+### 6. 1 小时以上长视频需要分段处理
+
+单次 AI 调用有 max_tokens 限制。对于 1 小时以上长视频，建议：
+- **交互式模式**：让 Claude Code 按段落逐步重排（不要一次性塞整个 srt）
+- **编程式模式**：改 `core/restructure.py` 让它按段切分再调用 API
+
+### 7. 中文路径 vs 中文文件名
+
+yt-dlp 能处理中文路径但部分 shell 命令不能。**建议**：output 目录用英文路径（如 `./tmp/`），文件名可以是中文（yt-dlp 用视频标题做文件名，会是中文）。
+
+---
 
 ## 贡献 · Contributing
 
