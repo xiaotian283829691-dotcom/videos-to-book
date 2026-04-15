@@ -109,7 +109,7 @@ videos-to-book/
 ├── adapters/
 │   ├── local.py              # 默认出口：本地 md 文件 ✅
 │   ├── obsidian.py           # 写入 Obsidian vault ✅
-│   ├── lark.py               # 发送到飞书（依赖 lark-cli）✅
+│   ├── lark.py               # 创建飞书云文档 + 可选群通知 ✅
 │   └── notion.py             # 写入 Notion（TODO）
 ├── skills/
 │   └── videos-to-book/

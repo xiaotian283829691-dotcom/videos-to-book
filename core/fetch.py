@@ -17,11 +17,13 @@ Usage:
     ├── 002-xxx.ai-zh.srt
     └── ...
 """
+from __future__ import annotations
 import argparse
 import os
 import subprocess
 import sys
 from pathlib import Path
+from typing import Optional
 
 try:
     import yaml
@@ -39,7 +41,7 @@ DEFAULT_CONFIG = {
 }
 
 
-def load_config(path: str | None) -> dict:
+def load_config(path: Optional[str]) -> dict:
     if not path or not os.path.exists(path) or yaml is None:
         return DEFAULT_CONFIG
     with open(path) as f:
@@ -51,7 +53,7 @@ def load_config(path: str | None) -> dict:
     return merged
 
 
-def build_ytdlp_cmd(url: str, out_dir: Path, fetch_cfg: dict) -> list[str]:
+def build_ytdlp_cmd(url: str, out_dir: Path, fetch_cfg: dict) -> list:
     cmd = [
         fetch_cfg["ytdlp_bin"],
         "--skip-download",

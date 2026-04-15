@@ -20,6 +20,7 @@ restructure.py — AI 重排编排器（可选）
        export ANTHROPIC_BASE_URL=https://...
        export ANTHROPIC_AUTH_TOKEN=...
 """
+from __future__ import annotations
 import argparse
 import os
 import sys

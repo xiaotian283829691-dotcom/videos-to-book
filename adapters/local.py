@@ -6,8 +6,10 @@ local.py — 默认出口：写入本地目录
     write(title: str, content: str, metadata: dict, **options) -> str
     返回：最终写入的路径/URL
 """
+from __future__ import annotations
 import re
 from pathlib import Path
+from typing import Optional
 
 
 def slugify(text: str) -> str:
@@ -17,7 +19,7 @@ def slugify(text: str) -> str:
     return text[:120]
 
 
-def write(title: str, content: str, metadata: dict | None = None, **options) -> str:
+def write(title: str, content: str, metadata: Optional[dict] = None, **options) -> str:
     """
     写入本地 markdown 文件。
 

@@ -8,8 +8,10 @@ Obsidian 打开后可直接检索/双向链接/图谱。
 接口：
     write(title, content, metadata=None, **options) -> str
 """
+from __future__ import annotations
 import re
 from pathlib import Path
+from typing import Optional
 
 
 def slugify(text: str) -> str:
@@ -18,7 +20,7 @@ def slugify(text: str) -> str:
     return text[:120]
 
 
-def write(title: str, content: str, metadata: dict | None = None, **options) -> str:
+def write(title: str, content: str, metadata: Optional[dict] = None, **options) -> str:
     """
     写入 Obsidian vault。
 

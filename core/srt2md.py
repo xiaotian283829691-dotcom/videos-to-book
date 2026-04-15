@@ -45,13 +45,19 @@ def srt_to_text(srt_path: Path) -> str:
 
 def convert_file(src: Path, out_dir: Path) -> Path:
     text = srt_to_text(src)
-    # 文件名: 去掉 .srt 扩展和语言后缀
+    # 文件名: 保留语言后缀（避免 en/zh 两条字幕文件同名互相覆盖）
     stem = src.stem
+    # 标准化语言后缀位置: xxx.en.srt -> xxx__en.md (用双下划线分隔更清晰)
+    lang_suffix = ""
     for suffix in [".ai-zh", ".zh-CN", ".zh-Hans", ".en", ".zh"]:
         if stem.endswith(suffix):
+            lang_suffix = suffix[1:]  # 去掉点号
             stem = stem[:-len(suffix)]
             break
-    out_path = out_dir / f"{stem}.md"
+    if lang_suffix:
+        out_path = out_dir / f"{stem}__{lang_suffix}.md"
+    else:
+        out_path = out_dir / f"{stem}.md"
     out_path.write_text(f"# {stem}\n\n> 原始字幕机械转换（未经 AI 加工）\n\n---\n\n{text}\n", encoding="utf-8")
     return out_path
 
