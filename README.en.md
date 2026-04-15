@@ -25,9 +25,16 @@
 
 This is the soul of the project — **the restructured markdown isn't just for humans to read, it's the methodology source for AI agents**.
 
-| Screenwriting course → TikTok storyboard (8-element framework applied) | Obsidian course → AI gives "actionable tomorrow-morning" advice |
-|---|---|
-| ![ai-use-screenwriting](images/ai-use-screenwriting.png) | ![ai-use-obsidian](images/ai-use-obsidian.png) |
+<table>
+<tr>
+<th width="50%">Screenwriting course → TikTok storyboard (8-element framework applied)</th>
+<th width="50%">Obsidian course → AI gives "actionable tomorrow-morning" advice</th>
+</tr>
+<tr>
+<td width="50%"><img src="images/ai-use-screenwriting.png" width="100%"></td>
+<td width="50%"><img src="images/ai-use-obsidian.png" width="100%"></td>
+</tr>
+</table>
 
 Left: Claude Code reads the restructured *Screenwriting Course Lesson 3 — Eight Elements*, then uses the framework (identity / desire / action / core question / obstacle / result / positive value / negative value) to write a TikTok storyboard and golden quotes.
 Right: the Claudian plugin in Obsidian reads the restructured *Obsidian × Claude Code* interview, then outputs concrete "start tomorrow" workflow changes.

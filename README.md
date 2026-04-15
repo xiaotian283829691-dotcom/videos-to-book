@@ -25,9 +25,16 @@
 
 这才是这个项目的灵魂——**整理好的 markdown 不止是给人读，是给 AI 当方法论用**。
 
-| 编导课 → 做抖音视频（八要素直接套用） | Obsidian 课 → AI 给出可立刻改变工作方式的建议 |
-|---|---|
-| ![ai-use-screenwriting](images/ai-use-screenwriting.png) | ![ai-use-obsidian](images/ai-use-obsidian.png) |
+<table>
+<tr>
+<th width="50%">编导课 → 做抖音视频（八要素直接套用）</th>
+<th width="50%">Obsidian 课 → AI 给出可立刻改变工作方式的建议</th>
+</tr>
+<tr>
+<td width="50%"><img src="images/ai-use-screenwriting.png" width="100%"></td>
+<td width="50%"><img src="images/ai-use-obsidian.png" width="100%"></td>
+</tr>
+</table>
 
 左图：Claude Code 读完整理后的《查理编剧课·第三课·八要素》，直接按框架（身份/欲望/动作/核心问题/障碍/结果/正价值/负价值）帮写抖音分镜和金句。
 右图：Obsidian 里的 Claudian 插件读完整理后的《Obsidian × Claude Code》访谈长文，直接给出"明天就能改变你工作方式"的可执行建议。
