@@ -299,14 +299,6 @@ Vin 的收尾：
 
 ---
 
-## 可迁移启示（写给啸天本人）
+---
 
-1. **Vin 的 slash 命令体系值得你抄**——你已经有 OpenClaw 跑在 Obsidian vault 上，差的是把"思考伙伴类"命令（/challenge, /emerge, /drift, /trace）用你的项目语境做一套。这跟你"营销 AI 化"主线契合度极高——你的 SCRM 产品经理经验、业务主线、新潮传媒交付记录、查理编剧课笔记都在 vault 里，Claude Code 现在已经能读全，关键是**把你要问的那些问题沉淀成命令**。
-
-2. **"不让 agent 写 vault 里的文件"这条规则你应该抄**——你用 OpenClaw 自动化一堆事，但 vault 里的内容必须全部是你亲手写的。这样 OpenClaw 找模式时，找的永远是"啸天怎么想"，不是"OpenClaw 怎么想"。边界必须清楚。
-
-3. **"/trace 这个想法是怎么演化的"是你想做的"学习复盘"的金钥匙**——你的查理编剧课整理、91 集字幕重排、OnceLab 战略演化、甚至"营销 AI 化"这个主线本身，都应该能被 /trace 出来。这是一种**对自己思想历程的考古**。
-
-4. **"Context Files"和你的 `.agents/product-marketing-context.md` 是一个思路**——Vin 给每个项目、每个身份（播客主、团队 lead、父亲）都写了 context 文件。你可以给自己所有项目（新潮、老丁、MBTI、抖音 AI Lab、公众号）都建一个。
-
-5. **OnceLab 未来的 "Personal Agent Infrastructure" 可以学这个**——Vin 这套模式是**可产品化的**。你的 OnceLab 给企业交付"Agent 基础设施"时，完全可以卖这套"vault + CLI + slash commands"的 methodology。你的差异化是比 Vin 更懂中文场景、更懂国内企业工作流。
+> **注**：完整版包含基于此内容的个人可迁移启示笔记，已在原作者私人 Obsidian vault 中。本开源 repo 只保留对话主体内容作为样板展示。

@@ -2,6 +2,8 @@
 
 > 把视频课程/访谈/讲座 **变成可读的书**。yt-dlp 抓字幕 + AI 重排为结构化 markdown + 多出口适配器（本地/Obsidian/飞书/Notion）。
 
+[🇬🇧 English README.en.md](./README.en.md)
+
 ## 这是什么 · Why this exists
 
 视频学习有三个老问题：
