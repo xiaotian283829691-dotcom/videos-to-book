@@ -1,0 +1,60 @@
+# videos-to-book 配置示例
+# 复制为 config.yaml 后修改（config.yaml 已被 .gitignore 忽略）
+
+# ---------- 抓取配置 ----------
+fetch:
+  # yt-dlp 可执行路径（pip install yt-dlp 后一般在 PATH 里）
+  ytdlp_bin: "yt-dlp"
+
+  # 浏览器 cookie 来源（B 站/YouTube 登录态站点需要）
+  # 支持: chrome, firefox, edge, safari, brave, opera
+  cookies_from_browser: "chrome"
+
+  # 代理（抓海外站点时用，留空则不走代理）
+  proxy: ""
+  # proxy: "http://127.0.0.1:7897"
+
+  # 字幕语言优先级
+  sub_langs:
+    - "ai-zh"    # B 站 AI 中文字幕
+    - "zh-CN"    # B 站官方中文字幕
+    - "en"       # YouTube 英文字幕
+    - "zh-Hans"  # YouTube 简体中文字幕
+
+# ---------- 出口（adapters） ----------
+# 多个出口可同时启用
+output:
+  # 默认本地 markdown 文件
+  local:
+    enabled: true
+    dir: "./output"
+
+  # Obsidian vault（把整理后的 md 放进 vault）
+  obsidian:
+    enabled: false
+    vault_path: "~/Documents/obsidian-vault"
+    subdir: "video-notes"
+
+  # 飞书（依赖 lark-cli，通过 bot 发到群）
+  lark:
+    enabled: false
+    app_id: ""           # 你的飞书 bot App ID
+    app_secret: ""       # App Secret
+    chat_id: ""          # 目标群 chat_id，例如 oc_xxxxx
+
+  # Notion（TODO: 待实现）
+  notion:
+    enabled: false
+
+  # Telegram（TODO: 待实现）
+  telegram:
+    enabled: false
+
+# ---------- AI 重排配置 ----------
+# 两种模式二选一：
+# 1. claude_code: 让 Claude Code 读 SKILL.md 交互式执行（无需 API Key）
+# 2. anthropic_api: 直接调 Anthropic API（适合批量/cron 场景）
+ai:
+  mode: "claude_code"
+  # anthropic_api_key: ""  # 仅 anthropic_api 模式需要
+  # model: "claude-opus-4-6"

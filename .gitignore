@@ -1,0 +1,21 @@
+# Local config with secrets
+config.yaml
+*.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Outputs
+output/
+tmp/
+*.srt
+*.vtt
+!examples/**/*.srt
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
