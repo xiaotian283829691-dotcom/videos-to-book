@@ -1,6 +1,7 @@
 # videos-to-book
 
-> Turn video courses, interviews, and talks **into a readable book**. yt-dlp for subtitles + AI restructuring into structured markdown + pluggable output adapters (local / Obsidian / Feishu / Notion).
+> Turn video courses, interviews, and talks into a **book humans can read** — and into **knowledge fuel AI can cite**.
+> yt-dlp for subtitles + AI restructuring into structured markdown + pluggable output adapters (local / Obsidian / Feishu / Notion).
 
 [🇨🇳 中文文档 README.md](./README.md)
 
@@ -14,6 +15,34 @@ Left: raw AI subtitle — no punctuation, fragmented, filler words everywhere.
 Right: the same content restructured — sections, quote blocks, tables, skimmable structure.
 **The lecturer's words and style are preserved 100% — only the presentation is reorganized.**
 
+## ⭐ Dual Value (the real positioning)
+
+Restructuring a video course into structured markdown produces two things simultaneously: **a book humans can read** AND **knowledge fuel that AI can cite**. The second might matter more than the first.
+
+### For humans: learning efficiency
+- Skimmable, searchable, permanently archivable
+- Quote blocks + sections + tables dramatically increase information density
+- Forms bidirectional links in note apps (Obsidian / Feishu / Notion)
+
+### For AI: knowledge supply (the real leverage)
+
+Markdown is the **"oxygen" of LLMs** — fragmented spoken-word subtitles are not; structured books are. A restructured course markdown lets AI **directly cite the course's thinking and methodology** and apply it to actual production work:
+
+| Scenario | How AI uses this course |
+|---|---|
+| **Building tools** | Have Claude Code apply [product management course] thinking to design your new tool |
+| **Making videos / writing scripts** | Have AI apply [screenwriting course's eight elements] to analyze a hit video or write a new script |
+| **Marketing copy** | Have AI apply [marketing course frameworks] to write acquisition copy, live-stream scripts |
+| **Decision-making** | Have AI apply [business course logic] to evaluate a new opportunity |
+| **Consulting / Q&A** | Have AI cite [one expert's full worldview] to answer user questions |
+
+**Practical usage**:
+- Drop the generated .md into an Obsidian vault — Claude Code (via Obsidian CLI) can reference the whole course library
+- Use it as part of a prompt: `@[the-course.md] apply this course's thinking to help me do X`
+- Feed it to OpenClaw / Claudebot / any agent as long-term knowledge storage
+
+**Process once, reuse forever**. One well-structured course becomes part of your AI tool chain's permanent memory — and **AI cites it more comprehensively, faster, and more accurately** than the incomplete version in your head.
+
 ## Why this exists
 
 Learning from video has three classic problems:
@@ -21,9 +50,11 @@ Learning from video has three classic problems:
 2. **Note-taking is exhausting** — scribbling while watching misses context
 3. **Nothing to review** — videos aren't text, so you can't search or re-read
 
-There are tools that download videos (yt-dlp), and tools that summarize them (Eightify / Glarity, SaaS-only and summary-focused). But **"preserve the speaker's full words + restructure by semantics + make it readable as a book"** — there's no mature open-source solution for this. That's what this project does.
+And in the AI era there's a fourth problem: **the great courses you've bookmarked are effectively invisible to AI** — video files aren't readable, fragmented subtitles aren't usable, your incomplete mental notes can't be referenced.
 
-Core assumption: **video subtitles are already great raw content**. They just need an editor who knows how to "strip filler words + add punctuation + organize structure + preserve personality". AI is that editor.
+Existing tools either just download (yt-dlp) or just summarize (Eightify / Glarity — SaaS-only, condensed-only). **"Preserve the speaker's full words + restructure by semantics + readable as a book + citable by AI"** — there's no mature open-source solution for this. That's what this project does.
+
+Core assumption: **video subtitles are already great raw content**. They just need an editor who knows how to "strip filler words + add punctuation + organize structure + preserve personality". AI is that editor, and **the output serves both humans and AI**.
 
 ## What it does
 
