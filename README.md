@@ -5,15 +5,34 @@
 
 [🇬🇧 English README.en.md](./README.en.md)
 
-## 效果预览
+## 完整流水线一图看懂
+
+### ① 输入：任意平台的视频课程 / 访谈 / 讲座
+
+| B 站课程（查理编剧课·91 集） | YouTube 访谈（Greg Isenberg × Internet Vin） |
+|---|---|
+| ![source-bilibili](images/source-bilibili.jpg) | ![source-youtube](images/source-youtube.jpg) |
+
+### ② 整理：字幕机械转 → AI 结构化重排
 
 | 整理前（AI 字幕机械转换） | 整理后（AI 书面化重排） |
 |---|---|
 | ![before](images/before.png) | ![after](images/after.png) |
 
-左边是原始 AI 字幕——没标点、碎片化、充斥"啊呢嗯"。
-右边是同一段内容整理后——有章节、有金句、有表格、有可跳读的结构。
-**保留讲师 100% 的原话和风格，只重构呈现方式**。
+保留讲师 100% 的原话和风格，只重构呈现方式——章节、金句块、对比表格全部自动生成。
+
+### ③ 真正的杠杆：AI 直接引用整理后的课，用于实际生产
+
+这才是这个项目的灵魂——**整理好的 markdown 不止是给人读，是给 AI 当方法论用**。
+
+| 编导课 → 做抖音视频（八要素直接套用） | Obsidian 课 → AI 给出可立刻改变工作方式的建议 |
+|---|---|
+| ![ai-use-screenwriting](images/ai-use-screenwriting.png) | ![ai-use-obsidian](images/ai-use-obsidian.png) |
+
+左图：Claude Code 读完整理后的《查理编剧课·第三课·八要素》，直接按框架（身份/欲望/动作/核心问题/障碍/结果/正价值/负价值）帮写抖音分镜和金句。
+右图：Obsidian 里的 Claudian 插件读完整理后的《Obsidian × Claude Code》访谈长文，直接给出"明天就能改变你工作方式"的可执行建议。
+
+**一次整理，AI 永久可用**。这就是"视频 → 书"真正的价值。
 
 ## ⭐ 双重价值（关键定位）
 

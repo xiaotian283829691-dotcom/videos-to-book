@@ -5,15 +5,34 @@
 
 [🇨🇳 中文文档 README.md](./README.md)
 
-## Before & After
+## The Full Pipeline at a Glance
+
+### ① Input: video courses / interviews / talks from any platform
+
+| B-station lecture (91-ep screenwriting course) | YouTube interview (Greg Isenberg × Internet Vin) |
+|---|---|
+| ![source-bilibili](images/source-bilibili.jpg) | ![source-youtube](images/source-youtube.jpg) |
+
+### ② Restructure: mechanical srt → AI-structured markdown
 
 | Before (raw AI subtitle) | After (restructured) |
 |---|---|
 | ![before](images/before.png) | ![after](images/after.png) |
 
-Left: raw AI subtitle — no punctuation, fragmented, filler words everywhere.
-Right: the same content restructured — sections, quote blocks, tables, skimmable structure.
-**The lecturer's words and style are preserved 100% — only the presentation is reorganized.**
+100% of the speaker's words and voice preserved — only the presentation is reorganized into sections, quote blocks, and comparison tables.
+
+### ③ The real leverage: AI cites the restructured course for actual work
+
+This is the soul of the project — **the restructured markdown isn't just for humans to read, it's the methodology source for AI agents**.
+
+| Screenwriting course → TikTok storyboard (8-element framework applied) | Obsidian course → AI gives "actionable tomorrow-morning" advice |
+|---|---|
+| ![ai-use-screenwriting](images/ai-use-screenwriting.png) | ![ai-use-obsidian](images/ai-use-obsidian.png) |
+
+Left: Claude Code reads the restructured *Screenwriting Course Lesson 3 — Eight Elements*, then uses the framework (identity / desire / action / core question / obstacle / result / positive value / negative value) to write a TikTok storyboard and golden quotes.
+Right: the Claudian plugin in Obsidian reads the restructured *Obsidian × Claude Code* interview, then outputs concrete "start tomorrow" workflow changes.
+
+**Restructure once, AI cites it forever**. This is the real value of "videos → books".
 
 ## ⭐ Dual Value (the real positioning)
 
