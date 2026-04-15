@@ -4,6 +4,16 @@
 
 [🇬🇧 English README.en.md](./README.en.md)
 
+## 效果预览
+
+| 整理前（AI 字幕机械转换） | 整理后（AI 书面化重排） |
+|---|---|
+| ![before](images/before.png) | ![after](images/after.png) |
+
+左边是原始 AI 字幕——没标点、碎片化、充斥"啊呢嗯"。
+右边是同一段内容整理后——有章节、有金句、有表格、有可跳读的结构。
+**保留讲师 100% 的原话和风格，只重构呈现方式**。
+
 ## 这是什么 · Why this exists
 
 视频学习有三个老问题：

@@ -4,6 +4,16 @@
 
 [🇨🇳 中文文档 README.md](./README.md)
 
+## Before & After
+
+| Before (raw AI subtitle) | After (restructured) |
+|---|---|
+| ![before](images/before.png) | ![after](images/after.png) |
+
+Left: raw AI subtitle — no punctuation, fragmented, filler words everywhere.
+Right: the same content restructured — sections, quote blocks, tables, skimmable structure.
+**The lecturer's words and style are preserved 100% — only the presentation is reorganized.**
+
 ## Why this exists
 
 Learning from video has three classic problems:
